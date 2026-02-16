@@ -1,0 +1,10 @@
+Models :-
+
+user = {
+    username: String,
+    email: String,
+    password: String,
+    bio: String,
+    followers: Array,
+    profileP_image: String
+}
