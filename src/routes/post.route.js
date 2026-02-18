@@ -5,7 +5,10 @@ const identifyUser = require("../middlewares/auth.middleware");
 const upload = multer({ storage: multer.memoryStorage() });
 
 const postRouter = express.Router();
-
+/*
+* @routes
+* @description
+*/
 postRouter.post(
   "/",
   upload.single("image"),

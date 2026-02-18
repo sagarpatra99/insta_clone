@@ -32,6 +32,7 @@ const controllerRegister = async (req, res) => {
       // - user ka data hona chahiye
       // - data unique hona chahiye
       id: user._id,
+      username: user.username,
     },
     process.env.JWT_SECRET,
     {
@@ -74,6 +75,7 @@ const controllerLogin = async (req, res) => {
   const token = jwt.sign(
     {
       id: isValidUser._id,
+      username: isValidUser.username,
     },
     process.env.JWT_SECRET,
     { expiresIn: "1d" },
