@@ -56,9 +56,11 @@ const controllerRegister = async (req, res) => {
 const controllerLogin = async (req, res) => {
   const { username, email, password } = req.body;
 
-  const isValidUser = await userModel.findOne({
-    $or: [{ email }, { username }],
-  });
+  const isValidUser = await userModel
+    .findOne({
+      $or: [{ email }, { username }],
+    })
+    .select("+password");
 
   if (!isValidUser)
     return res.status(404).json({
