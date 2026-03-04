@@ -25,6 +25,7 @@ postRouter.get(
 );
 
 postRouter.post("/like/:postId", identifyUser, controller.controllerLikePost);
+postRouter.post("/unlike/:postId", identifyUser, controller.controllerUnlikePost);
 
 postRouter.get("/feed", identifyUser, controller.controllerGetFeed)
 
